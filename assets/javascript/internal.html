@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+<div id='demo'></div>
+
+
+
+<script type="text/javascript">
+	//Variables
+let wordArray = [
+//to be edited
+'these',
+'are',
+'different',
+'words',
+'to',
+'guess'
+];
+
+//gets random word from wordArray, logs word and length
+let randomWord = wordArray[Math.floor(Math.random() * wordArray.length)]; 
+console.log(randomWord); 
+console.log(randomWord.length);
+
+//fills blankWordArray with '_' based on randomWord.length and logs
+let blankWordArray = [];
+for(i=0;i<randomWord.length;i++) {
+	blankWordArray[i] = '_';
+};
+console.log(blankWordArray);
+
+let remainingLetters = randomWord.length;
+
+while (remainingLetters > 0) {
+	let el = document.getElementById('demo');
+	el.innerHTML = blankWordArray.join(' ');
+	var guess = document.onkeyup = function(event) {
+		lettersGuessed.push(event.key);
+		console.log(lettersGuessed);
+	}
+}
+
+// let guessesRemaining = 8
+
+// let wins = 0
+
+// let lettersGuessed = [];
+
+// 	//Functions
+
+// document.onkeyup = function(event) {
+// console.log(event.key);
+// lettersGuessed.push(event.key);
+// console.log(lettersGuessed);
+// };
+
+
+
+
+
+</script>
+</body>
+</html>
